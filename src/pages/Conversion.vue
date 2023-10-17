@@ -9,7 +9,7 @@
       </div>
       <div class="mb-3">
         <label for="montoOrigen" class="form-label">Monto UF a convertir</label>
-        <input type="number" class="form-control" id="montoOrigen" step="any" v-model="montoOrigen">
+        <input type="number" class="form-control" id="montoOrigen" step="any" min="1" v-model="montoOrigen">
       </div>
       <button type="submit" class="btn btn-primary">Convertir</button>
     </form>
