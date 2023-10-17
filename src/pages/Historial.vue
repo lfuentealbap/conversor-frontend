@@ -6,7 +6,9 @@ import Navbar from '../components/Navbar.vue';
 
 <template>
   <Navbar />
-  <h1>Historial</h1>
+  <section class="container">
+    <h1>Historial</h1>
+  </section>
 
   
 </template>
