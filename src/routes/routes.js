@@ -39,15 +39,22 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   const token = localStorage.getItem("token");
   const isAuthenticated = token !== null;
+  //Si la ruta pide autentificación y el usuario no está logueado
+  //Lo redireccionamos a la página de login
   if (to.meta.requiresAuth && !isAuthenticated) {
     next({ name: "Login" });
   }
+  //Si el usuario está logueado y quiere ir a la página de login
+  //Lo redireccionamos a la página de conversion
   if (to.name === "Login" && isAuthenticated) {
     next({ name: "Conversion" });
   }
+  //Si el usuario está logueado y quiere ir a la página de historial
   if (isAuthenticated) {
     const tokenDecoded = jwtDecode(token);
     const isAdmin = tokenDecoded.role === "admin";
+    //Si la ruta pide que el usuario sea admin y el usuario no es admin
+    //Lo redireccionamos a la página de acceso denegado
     if (to.meta.requiresAdmin && !isAdmin) {
       next({ name: "AccesoDenegado" });
     } else {
