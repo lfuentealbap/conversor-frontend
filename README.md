@@ -33,6 +33,6 @@ Este es el proyecto de front-end para la aplicación de conversión de UF a CLP.
 
 1. Configura las variables de entorno, creando un archivo .env en la carpeta raíz del proyecto. Este debe incluir lo siguiente:
 - VITE_API_URL : variable que contiene la url del backend.
-2. Ejecuta `npm run serve` para iniciar el servidor de desarrollo.
+2. Ejecuta `npm run dev` para iniciar el servidor de desarrollo.
 2. Abre tu navegador y ve a `http://localhost:5173` para ver la aplicación en funcionamiento.
 
